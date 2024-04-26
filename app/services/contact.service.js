@@ -50,7 +50,7 @@ async create(payload){
         const filter = {
             _id: ObjectId.isValid(id) ? new ObjectId(id) : null,
         };
-        const update = this.extractConactData(payload);
+        const update = this.extractContactData(payload);
         const result = await this.Contact.findOneAndUpdate(
             filter,
             { $set: update },

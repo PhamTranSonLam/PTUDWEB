@@ -3,14 +3,22 @@ const express = require("express");
 const cors = require("cors");
 const contactsRouter = require("./app/routes/contact.route");
 const ApiError = require("./app/api-error");
-
+const nhaxuatbanRouter = require("./app/routes/nhaxuatban.route");
+const sachRouter = require("./app/routes/sach.route");
+const theodoimuonsachRouter = require("./app/routes/theodoimuonsach.route");
+const docgiaRouter = require("./app/routes/docgia.route");
+const nhanvienRouter = require("./app/routes/nhanvien.route");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use("/api/contacts", contactsRouter);
-
+app.use("/api/nhaxuatban", nhaxuatbanRouter);
+app.use("/api/sach", sachRouter);
+app.use("/api/theodoimuonsach", theodoimuonsachRouter);
+app.use("/api/docgia", docgiaRouter);
+app.use("/api/nhanvien", nhanvienRouter);
 // handle 404 response
 app.use((req, res, next) => {
     // Code ở đây sẽ chạy khi không có route được định nghĩa nào
